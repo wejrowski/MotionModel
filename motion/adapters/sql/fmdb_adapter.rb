@@ -93,7 +93,7 @@ module MotionModel
         NSFileManager.defaultManager.removeItemAtPath(db_path, error:nil)
       end
       MotionModel::Store.config(self)
-      queue_name = "#{NSBundle.mainBundle.bundleIdentifier}.#{self.class.name.underscore}"
+      queue_name = "#{NSBundle.mainBundle.bundleIdentifier}.#{self.class.name}"
       @queue = Dispatch::Queue.new(queue_name) # Non-concurrent queue
       #@queue = Dispatch::Queue.concurrent(queue_name)
     end
